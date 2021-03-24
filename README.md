@@ -1,2 +1,2 @@
 # verilog
-verilog codes
+2:1 MUX
