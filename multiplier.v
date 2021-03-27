@@ -1,24 +1,28 @@
+/*16 bit multiplier using data path and control path*/
+
+/*  ///////  WELCOME  ////////*/
+
 
 `timescale 1ns/1ps
 
 
-module mul_data (equalZ,loadA,loadB,loadP,clrP,decB,data_in,clk);
+module mul_data (equalZ,loadA,loadB,loadP,clrP,decB,data_in,clk);                // output and input to the data path
 input loadA,loadB,loadP,clrP,decB,clk;
 input[15:0] data_in;
 output equalZ;
 wire [15:0] X,Y,Z,Bout,bus;
 assign bus= data_in;
-PIPO1 A (.dout(X),.d_in(bus),.ld(loadA),.clk(clk));
-PIPO2 P (.dout(Y),.din(Z),.ld(loadP),.clr(clrP),.clk(clk));
-CNTR B (.Bout(Bout),.data_in(bus),.ld(loadB),.decB(decB),.clk(clk));
-Add AD (.out(Z),.in1(X),.in2(Y));
-EqualZ COMP (.equalZ(equalZ),.Bout(Bout));
+  PIPO1 A (.dout(X),.d_in(bus),.ld(loadA),.clk(clk));                          // parallel in and parallel op register A
+  PIPO2 P (.dout(Y),.din(Z),.ld(loadP),.clr(clrP),.clk(clk));                  // parallel in and parallel op register P
+  CNTR B (.Bout(Bout),.data_in(bus),.ld(loadB),.decB(decB),.clk(clk));         // counter
+  Add AD (.out(Z),.in1(X),.in2(Y));                                            // adder
+  EqualZ COMP (.equalZ(equalZ),.Bout(Bout));                                   // comparator
 endmodule
 
 
 
 
-module PIPO1 (dout,d_in,ld,clk);
+module PIPO1 (dout,d_in,ld,clk);                                              // module parallel in and parallel op register A
 input [15:0] d_in;
 input ld,clk;
 output reg [15:0] dout;
@@ -29,7 +33,7 @@ endmodule
 
 
 
-module PIPO2 (dout,din,ld,clr,clk);
+module PIPO2 (dout,din,ld,clr,clk);                                        // module parallel in and parallel op register P
 input [15:0] din;
 input ld,clr,clk;
 output reg [15:0] dout;
@@ -40,7 +44,7 @@ endmodule
 
 
 
-module Add (out,in1,in2);
+module Add (out,in1,in2);                                              // adder module
 input [15:0] in1,in2;
 output reg [15:0] out;
 always @(*)
@@ -49,7 +53,7 @@ endmodule
 
 
 
-module EqualZ (equalZ,Bout);
+module EqualZ (equalZ,Bout);                                          //comparator module
 input [15:0]Bout;
 output equalZ;
 assign equalZ=(Bout==1);
@@ -57,7 +61,7 @@ endmodule
 
 
 
-module CNTR (Bout,data_in,ld,decB,clk);
+module CNTR (Bout,data_in,ld,decB,clk);                          // counter module
 input [15:0] data_in;
 input ld,decB,clk;
 output reg [15:0] Bout;
@@ -69,20 +73,20 @@ endmodule
 
 
 
-module controller (loadA,loadB,loadP,clrP,decB,done,clk,equalZ,start);
-input clk,equalZ,start;
+module controller (loadA,loadB,loadP,clrP,decB,done,clk,equalZ,start);                // controller module output and input
+input clk,equalZ,start; 
 output reg loadA,loadB,loadP,clrP,decB,done;
 reg [2:0] state;
 parameter S0=3'b000,S1=3'b001,S2=3'b010,S3=3'b011,S4=3'b100;
 always@(posedge clk)
 begin
 case (state)
-S0: if (start) state<=S1;
-S1: state<=S2;
-S2: state<=S3;
-S3: if (equalZ) state<=S4;
-S4: state<=S4;
-default: state<=S0;
+  S0: if (start) state<=S1;                                    // if start =1 we will move to state S1 
+  S1: state<=S2;                                                                              
+  S2: state<=S3;  
+  S3: if (equalZ) state<=S4;                                  // remain in state S3 until equalZ=1
+  S4: state<=S4; 
+  default: state<=S0;
 endcase
 end
 always @ (state)
