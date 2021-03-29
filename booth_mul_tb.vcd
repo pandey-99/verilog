@@ -1,0 +1,108 @@
+$date
+	Mon Mar 22 21:56:47 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module booth_mul_tb $end
+$var wire 8 ! Z [7:0] $end
+$var reg 4 " X [3:0] $end
+$var reg 4 # Y [3:0] $end
+$scope module uut $end
+$var wire 4 $ X [3:0] $end
+$var wire 4 % Y [3:0] $end
+$var reg 1 & E1 $end
+$var reg 8 ' Z [7:0] $end
+$var reg 2 ( temp [1:0] $end
+$var integer 32 ) i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b100 )
+b0 (
+b0 '
+0&
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10000
+1&
+b11111000 !
+b11111000 '
+b10 (
+b100 )
+b1 #
+b1 %
+b1000 "
+b1000 $
+#20000
+b0 (
+b100 )
+0&
+b110 !
+b110 '
+b110 #
+b110 %
+b1 "
+b1 $
+#30000
+0&
+b0 (
+b100 )
+b10 !
+b10 '
+b10 #
+b10 %
+#40000
+0&
+b1 (
+b100 )
+b1110 !
+b1110 '
+b111 "
+b111 $
+#50000
+0&
+b0 (
+b100 )
+b10 !
+b10 '
+b1 "
+b1 $
+#60000
+0&
+b0 (
+b100 )
+b110 !
+b110 '
+b110 #
+b110 %
+#80000
+1&
+b10 (
+b100 )
+b11110010 !
+b11110010 '
+b10 #
+b10 %
+b1001 "
+b1001 $
+#90000
+b11 (
+b100 )
+1&
+b11111010 !
+b11111010 '
+b110 #
+b110 %
+b1111 "
+b1111 $
+#100000
