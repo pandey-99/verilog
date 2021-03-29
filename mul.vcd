@@ -1,0 +1,443 @@
+$date
+	Fri Mar 26 21:59:30 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module mul_test $end
+$var wire 1 ! loadP $end
+$var wire 1 " loadB $end
+$var wire 1 # loadA $end
+$var wire 1 $ equalZ $end
+$var wire 1 % done $end
+$var wire 1 & decB $end
+$var wire 1 ' clrP $end
+$var reg 1 ( clk $end
+$var reg 16 ) data_in [15:0] $end
+$var reg 1 * start $end
+$scope module CON $end
+$var wire 1 ( clk $end
+$var wire 1 * start $end
+$var wire 1 $ equalZ $end
+$var reg 1 ' clrP $end
+$var reg 1 & decB $end
+$var reg 1 % done $end
+$var reg 1 # loadA $end
+$var reg 1 " loadB $end
+$var reg 1 ! loadP $end
+$var reg 3 + state [2:0] $end
+$upscope $end
+$scope module DP $end
+$var wire 16 , bus [15:0] $end
+$var wire 1 ( clk $end
+$var wire 1 ' clrP $end
+$var wire 16 - data_in [15:0] $end
+$var wire 1 & decB $end
+$var wire 1 # loadA $end
+$var wire 1 " loadB $end
+$var wire 1 ! loadP $end
+$var wire 1 $ equalZ $end
+$var wire 16 . Z [15:0] $end
+$var wire 16 / Y [15:0] $end
+$var wire 16 0 X [15:0] $end
+$var wire 16 1 Bout [15:0] $end
+$scope module A $end
+$var wire 1 ( clk $end
+$var wire 16 2 d_in [15:0] $end
+$var wire 1 # ld $end
+$var reg 16 3 dout [15:0] $end
+$upscope $end
+$scope module AD $end
+$var wire 16 4 in1 [15:0] $end
+$var wire 16 5 in2 [15:0] $end
+$var reg 16 6 out [15:0] $end
+$upscope $end
+$scope module B $end
+$var wire 1 ( clk $end
+$var wire 16 7 data_in [15:0] $end
+$var wire 1 & decB $end
+$var wire 1 " ld $end
+$var reg 16 8 Bout [15:0] $end
+$upscope $end
+$scope module COMP $end
+$var wire 16 9 Bout [15:0] $end
+$var wire 1 $ equalZ $end
+$upscope $end
+$scope module P $end
+$var wire 1 ( clk $end
+$var wire 1 ' clr $end
+$var wire 16 : din [15:0] $end
+$var wire 1 ! ld $end
+$var reg 16 ; dout [15:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+bx ,
+bx +
+x*
+bx )
+0(
+x'
+x&
+x%
+x$
+x#
+x"
+x!
+$end
+#3000
+1*
+#5000
+b0 +
+1(
+#6000
+0&
+0'
+0!
+0"
+0#
+#10000
+0(
+b1111 ,
+b1111 2
+b1111 7
+b1111 )
+b1111 -
+#15000
+b1 +
+1(
+#16000
+1#
+#20000
+0(
+#25000
+b1111 0
+b1111 3
+b1111 4
+b10 +
+1(
+#26000
+1'
+1"
+0#
+#30000
+0(
+b1001 ,
+b1001 2
+b1001 7
+b1001 )
+b1001 -
+#35000
+b1111 .
+b1111 6
+b1111 :
+b11 +
+0$
+b1001 1
+b1001 8
+b1001 9
+b0 /
+b0 5
+b0 ;
+1(
+#36000
+1&
+0'
+1!
+0"
+#40000
+0(
+#45000
+b11110 .
+b11110 6
+b11110 :
+b1111 /
+b1111 5
+b1111 ;
+b1000 1
+b1000 8
+b1000 9
+1(
+#50000
+0(
+#55000
+b101101 .
+b101101 6
+b101101 :
+b111 1
+b111 8
+b111 9
+b11110 /
+b11110 5
+b11110 ;
+1(
+#60000
+0(
+#65000
+b111100 .
+b111100 6
+b111100 :
+b101101 /
+b101101 5
+b101101 ;
+b110 1
+b110 8
+b110 9
+1(
+#70000
+0(
+#75000
+b1001011 .
+b1001011 6
+b1001011 :
+b101 1
+b101 8
+b101 9
+b111100 /
+b111100 5
+b111100 ;
+1(
+#80000
+0(
+#85000
+b1011010 .
+b1011010 6
+b1011010 :
+b1001011 /
+b1001011 5
+b1001011 ;
+b100 1
+b100 8
+b100 9
+1(
+#90000
+0(
+#95000
+b1101001 .
+b1101001 6
+b1101001 :
+b11 1
+b11 8
+b11 9
+b1011010 /
+b1011010 5
+b1011010 ;
+1(
+#100000
+0(
+#105000
+b1111000 .
+b1111000 6
+b1111000 :
+b1101001 /
+b1101001 5
+b1101001 ;
+b10 1
+b10 8
+b10 9
+1(
+#110000
+0(
+#115000
+b10000111 .
+b10000111 6
+b10000111 :
+1$
+b1 1
+b1 8
+b1 9
+b1111000 /
+b1111000 5
+b1111000 ;
+1(
+#120000
+0(
+#125000
+b10010110 .
+b10010110 6
+b10010110 :
+b10000111 /
+b10000111 5
+b10000111 ;
+0$
+b0 1
+b0 8
+b0 9
+b100 +
+1(
+#126000
+0&
+0!
+1%
+#130000
+0(
+#135000
+1(
+#140000
+0(
+#145000
+1(
+#150000
+0(
+#155000
+1(
+#160000
+0(
+#165000
+1(
+#170000
+0(
+#175000
+1(
+#180000
+0(
+#185000
+1(
+#190000
+0(
+#195000
+1(
+#200000
+0(
+#205000
+1(
+#210000
+0(
+#215000
+1(
+#220000
+0(
+#225000
+1(
+#230000
+0(
+#235000
+1(
+#240000
+0(
+#245000
+1(
+#250000
+0(
+#255000
+1(
+#260000
+0(
+#265000
+1(
+#270000
+0(
+#275000
+1(
+#280000
+0(
+#285000
+1(
+#290000
+0(
+#295000
+1(
+#300000
+0(
+#305000
+1(
+#310000
+0(
+#315000
+1(
+#320000
+0(
+#325000
+1(
+#330000
+0(
+#335000
+1(
+#340000
+0(
+#345000
+1(
+#350000
+0(
+#355000
+1(
+#360000
+0(
+#365000
+1(
+#370000
+0(
+#375000
+1(
+#380000
+0(
+#385000
+1(
+#390000
+0(
+#395000
+1(
+#400000
+0(
+#405000
+1(
+#410000
+0(
+#415000
+1(
+#420000
+0(
+#425000
+1(
+#430000
+0(
+#435000
+1(
+#440000
+0(
+#445000
+1(
+#450000
+0(
+#455000
+1(
+#460000
+0(
+#465000
+1(
+#470000
+0(
+#475000
+1(
+#480000
+0(
+#485000
+1(
+#490000
+0(
+#495000
+1(
+#500000
+0(
+#503000
